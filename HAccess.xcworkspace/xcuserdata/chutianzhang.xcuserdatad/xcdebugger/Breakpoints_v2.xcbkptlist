@@ -32,31 +32,31 @@
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "__33-[HFileCache backgroundCleanDisk]_block_invoke"
+                  symbolName = "-[HFileCache _getSize]"
                   moduleName = "HAccess"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/chutianzhang/Documents/github_pods/HAccess/Pods/HCache/Classes/HFileCache.m"
-                  timestampString = "493982376.828783"
+                  urlString = "file:///Users/chutianzhang/Documents/pods/HAccess/Pods/HCache/Classes/HFileCache.m"
+                  timestampString = "514802178.12854"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "240"
                   endingLineNumber = "240"
-                  offsetFromSymbolStart = "88">
+                  offsetFromSymbolStart = "695">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "__destroy_helper_block_.168"
+                  symbolName = "-[HFileCache _getSize]"
                   moduleName = "HAccess"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/chutianzhang/Documents/github_pods/HAccess/Pods/HCache/Classes/HFileCache.m"
-                  timestampString = "493982376.829042"
+                  urlString = "file:///Users/chutianzhang/Documents/pods/HAccess/Pods/HCache/Classes/HFileCache.m"
+                  timestampString = "514802178.134965"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "240"
                   endingLineNumber = "240"
-                  offsetFromSymbolStart = "74">
+                  offsetFromSymbolStart = "724">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -74,7 +74,7 @@
             startingLineNumber = "746"
             endingLineNumber = "746"
             landmarkName = "-entityPropertyDetailList:isDepSearch:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -90,7 +90,7 @@
             startingLineNumber = "253"
             endingLineNumber = "253"
             landmarkName = "-setWithDictionary:enableKeyMap:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -100,13 +100,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Demo/MenuVC.m"
-            timestampString = "493982244.12945"
+            timestampString = "510846836.811032"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
             landmarkName = "-testDBDAO"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -115,14 +115,14 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Classes/Database/HDatabaseDAO.m"
-            timestampString = "493982250.81144"
+            filePath = "Classes/Network/HNetworkDAO.m"
+            timestampString = "509511037.351841"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "387"
-            endingLineNumber = "387"
-            landmarkName = "-get:"
-            landmarkType = "5">
+            startingLineNumber = "510"
+            endingLineNumber = "510"
+            landmarkName = "-requestFinishedSucessWithInfo:response:"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -131,30 +131,14 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Classes/Database/HDatabaseDAO.m"
-            timestampString = "493982299.54105"
+            filePath = "Demo/MenuVC.m"
+            timestampString = "510846882.143067"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "370"
-            endingLineNumber = "370"
-            landmarkName = "-get:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Classes/Database/HDBMgr.m"
-            timestampString = "493982330.765525"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "138"
-            endingLineNumber = "138"
-            landmarkName = "-entityClassNameForTable:dbkey:"
-            landmarkType = "5">
+            startingLineNumber = "165"
+            endingLineNumber = "165"
+            landmarkName = "-testDBEntity"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

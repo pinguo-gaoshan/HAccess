@@ -9,7 +9,7 @@
 #import "HDatabaseDAO.h"
 #import "HPropertyMgr.h"
 #import <objc/runtime.h>
-#import <Hodor/HCommon.h>
+#import <Hodor/NSString+ext.h>
 
 
 /**
@@ -56,7 +56,7 @@
     self.ID = [result stringForColumn:@"id"];
     self.created = [result longForColumn:@"created"];
     self.modified = [result longForColumn:@"modified"];
-    NSArray *pplist = [[HPropertyMgr shared] entityPropertylist:NSStringFromClass(self.class) isDepSearch:YES];
+    NSArray *pplist = [[HPropertyMgr shared] entityPropertylist:NSStringFromClass(self.class) deepTo:[HEntity class]];
     for (NSString *p in pplist)
     {
         NSArray *exts = [[self class] annotations:p];
@@ -207,8 +207,7 @@
 - (BOOL)save:(HEntity *)entity keypp:(NSString *)keypp
 {
     if (keypp.length == 0) return NO;
-    NSString *IDValue = [HDatabaseDAO cleanValue:entity.ID];
-    if (![keypp isEqualToString:@"id"]) IDValue = [entity hValueForKey:keypp];
+    NSString *IDValue = [HDatabaseDAO cleanValue:[entity hValueForKey:keypp]];
     if(nil == [self get:IDValue])
     {
         return [self add:entity];
@@ -227,8 +226,8 @@
 
     [self inDatabase:^(FMDatabase* db)
      {
-         NSArray *pplist = [self entityPropertylist:[entity class] isDepSearch:NO];
-         NSString *fields = [self entityPropertylistString:[entity class] isDepSearch:NO];
+         NSArray *pplist = [self entityPropertylist:[entity class]];
+         NSString *fields = [self entityPropertylistString:[entity class]];
          NSMutableString *values = [[NSMutableString alloc] init];
          int index = 0;
          for (NSString *p in pplist)
@@ -299,7 +298,7 @@
     [self inDatabase:^(FMDatabase* db)
      {
          NSMutableString *settes =[[NSMutableString alloc] init];
-         NSArray *pplist = [self entityPropertylist:[entity class] isDepSearch:NO];
+         NSArray *pplist = [self entityPropertylist:[entity class]];
          int index = 0;
          for (NSString *p in pplist)
          {
@@ -313,8 +312,7 @@
 
          long nowtime = time(NULL);
          [settes appendFormat:@", modified = '%li'", nowtime];
-         NSString *IDValue = [HDatabaseDAO cleanValue:entity.ID];
-         if (![keypp isEqualToString:@"id"]) IDValue = [entity hValueForKey:keypp];
+         NSString *IDValue = [HDatabaseDAO cleanValue:[entity hValueForKey:keypp]];
          NSString *sql = [NSString stringWithFormat:@"UPDATE %@ SET %@ WHERE %@ = '%@'", [self tableName], settes, keypp, IDValue];
          res = [db executeUpdate:sql];
          if (res)
@@ -331,7 +329,7 @@
     [self inDatabase:^(FMDatabase* db)
      {
          NSMutableString *settes =[[NSMutableString alloc] init];
-         NSArray *pplist = [self entityPropertylist:[entity class] isDepSearch:NO];
+         NSArray *pplist = [self entityPropertylist:[entity class]];
          int index = 0;
          for (NSString *p in pplist)
          {
@@ -350,8 +348,7 @@
          NSMutableString *whereStatment = [[NSMutableString alloc] init];
          for (NSString *pp in keyppList)
          {
-             id value = [HDatabaseDAO cleanValue:entity.ID];
-             if (![pp isEqualToString:@"id"]) value = [entity hValueForKey:pp];
+             id value = [HDatabaseDAO cleanValue:[entity hValueForKey:pp]];
              [whereStatment appendFormat:@" and %@ = '%@'",pp,[HDatabaseDAO cleanValue:[value stringValue]]];
          }
          NSString *sql = [NSString stringWithFormat:@"UPDATE %@ SET %@ WHERE 1 %@", [self tableName], settes, whereStatment];
@@ -459,8 +456,8 @@
     if (![self tableName]) return NO;
     if ([entities count] == 0) return NO;
     Class entityClass = [entities.lastObject class];
-    NSArray *pplist = [self entityPropertylist:entityClass isDepSearch:NO];
-    NSString *fields = [self entityPropertylistString:entityClass isDepSearch:NO];
+    NSArray *pplist = [self entityPropertylist:entityClass];
+    NSString *fields = [self entityPropertylistString:entityClass];
     fields = [fields stringByAppendingString:@",created,modified"];
 
     __block BOOL res = YES;
@@ -725,9 +722,9 @@
 
 
 
-- (NSArray *)entityPropertylist:(Class)entityClass isDepSearch:(BOOL)deepSearch
+- (NSArray *)entityPropertylist:(Class)entityClass
 {
-    NSArray *pplist = [[HPropertyMgr shared] entityPropertylist:NSStringFromClass(entityClass) isDepSearch:deepSearch];
+    NSArray *pplist = [[HPropertyMgr shared] entityPropertylist:NSStringFromClass(entityClass) deepTo:nil];
     NSMutableArray *newPPlist = [NSMutableArray new];
     for (NSString *p in pplist)
     {
@@ -738,9 +735,9 @@
     }
     return newPPlist;
 }
-- (NSArray<HPropertyDetail *> *)entityPropertyDetailList:(Class)entityClass isDepSearch:(BOOL)deepSearch
+- (NSArray<HPropertyDetail *> *)entityPropertyDetailList:(Class)entityClass
 {
-    NSArray<HPropertyDetail *> *pplist = [[HPropertyMgr shared] entityPropertyDetailList:NSStringFromClass(entityClass) isDepSearch:deepSearch];
+    NSArray<HPropertyDetail *> *pplist = [[HPropertyMgr shared] entityPropertyDetailList:NSStringFromClass(entityClass) deepTo:nil];
     NSMutableArray<HPropertyDetail *> *newPPDetaillist = [NSMutableArray new];
     for (HPropertyDetail *p in pplist)
     {
@@ -754,11 +751,7 @@
 
 - (NSString *)entityPropertylistString:(Class)entityClass
 {
-    return [self entityPropertylistString:entityClass isDepSearch:YES];
-}
-- (NSString *)entityPropertylistString:(Class)entityClass isDepSearch:(BOOL)deepSearch;
-{
-    NSArray *pplist = [self entityPropertylist:entityClass isDepSearch:deepSearch];
+    NSArray *pplist = [self entityPropertylist:entityClass];
     NSMutableString *fields = [[NSMutableString alloc] init];
     int index = 0;
     for (NSString *p in pplist)

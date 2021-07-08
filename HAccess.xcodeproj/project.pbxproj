@@ -23,7 +23,6 @@
 		002D866E1B465BFA00D1D729 /* HDBMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = 002D86621B465BFA00D1D729 /* HDBMgr.m */; };
 		002D866F1B465BFA00D1D729 /* HEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 002D86651B465BFA00D1D729 /* HEntity.m */; };
 		002D86781B46616300D1D729 /* NetworkDaoTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 002D86771B46616300D1D729 /* NetworkDaoTestVC.m */; };
-		00350FEB1C9FDD7E00CDF06B /* HNProvider_AF2.m in Sources */ = {isa = PBXBuildFile; fileRef = 00350FEA1C9FDD7E00CDF06B /* HNProvider_AF2.m */; };
 		00350FEE1C9FE27300CDF06B /* HNetworkMultiDataObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 00350FED1C9FE27300CDF06B /* HNetworkMultiDataObj.m */; };
 		00769C111BA866980022878B /* HPropertyMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = 00769C101BA866980022878B /* HPropertyMgr.m */; };
 		00786CFB1B96D0F4005A8247 /* TestEntity1.m in Sources */ = {isa = PBXBuildFile; fileRef = 00786CFA1B96D0F4005A8247 /* TestEntity1.m */; };
@@ -37,18 +36,13 @@
 		00DD89241B462D6600214FD3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00DD89231B462D6600214FD3 /* AppDelegate.m */; };
 		00DD892C1B462D6600214FD3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00DD892B1B462D6600214FD3 /* Images.xcassets */; };
 		00E907851BAD11F600E10652 /* DeserializeDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E907841BAD11F600E10652 /* DeserializeDemo.m */; };
+		152761A9221697EF007EE5E2 /* NSObject+HDeserializable.m in Sources */ = {isa = PBXBuildFile; fileRef = 152761A8221697EF007EE5E2 /* NSObject+HDeserializable.m */; };
+		15FC2F011ED2BA91005E8B7B /* HNProvider_AF3.m in Sources */ = {isa = PBXBuildFile; fileRef = 15FC2F001ED2BA91005E8B7B /* HNProvider_AF3.m */; };
 		9E68062C1C9BEBB700519539 /* HNetworkDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E6806241C9BEBB700519539 /* HNetworkDAO.m */; };
 		9E68062D1C9BEBB700519539 /* HNQueueManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E6806261C9BEBB700519539 /* HNQueueManager.m */; };
 		9E68062E1C9BEBB700519539 /* HNJsonDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E6806281C9BEBB700519539 /* HNJsonDeserializer.m */; };
-		9E68062F1C9BEBB700519539 /* HNPBDeseriralizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E68062B1C9BEBB700519539 /* HNPBDeseriralizer.m */; };
-		9EF847661C92637900202D0E /* PBNetworkDaoTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EF847651C92637900202D0E /* PBNetworkDaoTestVC.m */; };
-		9EF847701C92680400202D0E /* Person.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EF8476F1C92680400202D0E /* Person.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		9EF8822A1C8816D300238751 /* HNetworkDAO.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9EF882291C8816D300238751 /* HNetworkDAO.bundle */; };
-		9EFFCCC91C945F96008764E8 /* PBTestNetworkDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EFFCCC81C945F96008764E8 /* PBTestNetworkDAO.m */; };
-		9EFFCCCF1C950BC7008764E8 /* User.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EFFCCCE1C950BC7008764E8 /* User.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		9EFFCCD21C950FEA008764E8 /* Photo.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EFFCCD11C950FEA008764E8 /* Photo.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		B233A7CDA81ACF4EA36DFB69 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 99CAB5AA2A23FAC518F6E98C /* libPods.a */; };
-		CC2B65C4C3A52CEA191D0E0A /* libPods-HAccess.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6603FF90984091327174E3B6 /* libPods-HAccess.a */; };
+		AB73FA1E1B2DF049FECC1E41 /* libPods-HAccess.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A193E4158595155F021CF283 /* libPods-HAccess.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,8 +76,6 @@
 		002D86761B46616300D1D729 /* NetworkDaoTestVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkDaoTestVC.h; sourceTree = "<group>"; };
 		002D86771B46616300D1D729 /* NetworkDaoTestVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkDaoTestVC.m; sourceTree = "<group>"; };
 		00350FE81C9FD61A00CDF06B /* HNetworkProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNetworkProvider.h; sourceTree = "<group>"; };
-		00350FE91C9FDD7E00CDF06B /* HNProvider_AF2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNProvider_AF2.h; sourceTree = "<group>"; };
-		00350FEA1C9FDD7E00CDF06B /* HNProvider_AF2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNProvider_AF2.m; sourceTree = "<group>"; };
 		00350FEC1C9FE27300CDF06B /* HNetworkMultiDataObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNetworkMultiDataObj.h; sourceTree = "<group>"; };
 		00350FED1C9FE27300CDF06B /* HNetworkMultiDataObj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNetworkMultiDataObj.m; sourceTree = "<group>"; };
 		00769C0F1BA866980022878B /* HPropertyMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPropertyMgr.h; sourceTree = "<group>"; };
@@ -110,11 +102,12 @@
 		00DD892B1B462D6600214FD3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		00E907831BAD11F600E10652 /* DeserializeDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeserializeDemo.h; sourceTree = "<group>"; };
 		00E907841BAD11F600E10652 /* DeserializeDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeserializeDemo.m; sourceTree = "<group>"; };
-		2EE6650205A1F6B0AFE04968 /* Pods-HAccess.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HAccess.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HAccess/Pods-HAccess.debug.xcconfig"; sourceTree = "<group>"; };
-		63DFD70F3DB6B40DCC91924E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		6603FF90984091327174E3B6 /* libPods-HAccess.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HAccess.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		8B3F5E34E5262575100D707F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		99CAB5AA2A23FAC518F6E98C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		0413D743DE52FC56EE813F8C /* Pods-HAccess.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HAccess.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HAccess/Pods-HAccess.debug.xcconfig"; sourceTree = "<group>"; };
+		0E64B8DBCAB9BDE77B441E0F /* Pods-HAccess.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HAccess.release.xcconfig"; path = "Pods/Target Support Files/Pods-HAccess/Pods-HAccess.release.xcconfig"; sourceTree = "<group>"; };
+		152761A7221697EF007EE5E2 /* NSObject+HDeserializable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+HDeserializable.h"; sourceTree = "<group>"; };
+		152761A8221697EF007EE5E2 /* NSObject+HDeserializable.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+HDeserializable.m"; sourceTree = "<group>"; };
+		15FC2EFF1ED2BA91005E8B7B /* HNProvider_AF3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNProvider_AF3.h; sourceTree = "<group>"; };
+		15FC2F001ED2BA91005E8B7B /* HNProvider_AF3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNProvider_AF3.m; sourceTree = "<group>"; };
 		9E6806221C9BEBB700519539 /* HNDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNDeserializer.h; sourceTree = "<group>"; };
 		9E6806231C9BEBB700519539 /* HNetworkDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNetworkDAO.h; sourceTree = "<group>"; };
 		9E6806241C9BEBB700519539 /* HNetworkDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNetworkDAO.m; sourceTree = "<group>"; };
@@ -122,20 +115,8 @@
 		9E6806261C9BEBB700519539 /* HNQueueManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNQueueManager.m; sourceTree = "<group>"; };
 		9E6806271C9BEBB700519539 /* HNJsonDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNJsonDeserializer.h; sourceTree = "<group>"; };
 		9E6806281C9BEBB700519539 /* HNJsonDeserializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNJsonDeserializer.m; sourceTree = "<group>"; };
-		9E68062A1C9BEBB700519539 /* HNPBDeseriralizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNPBDeseriralizer.h; sourceTree = "<group>"; };
-		9E68062B1C9BEBB700519539 /* HNPBDeseriralizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNPBDeseriralizer.m; sourceTree = "<group>"; };
-		9EF847641C92637900202D0E /* PBNetworkDaoTestVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBNetworkDaoTestVC.h; sourceTree = "<group>"; };
-		9EF847651C92637900202D0E /* PBNetworkDaoTestVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBNetworkDaoTestVC.m; sourceTree = "<group>"; };
-		9EF8476E1C92680400202D0E /* Person.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.pbobjc.h; sourceTree = "<group>"; };
-		9EF8476F1C92680400202D0E /* Person.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.pbobjc.m; sourceTree = "<group>"; };
 		9EF882291C8816D300238751 /* HNetworkDAO.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = HNetworkDAO.bundle; sourceTree = "<group>"; };
-		9EFFCCC71C945F96008764E8 /* PBTestNetworkDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBTestNetworkDAO.h; sourceTree = "<group>"; };
-		9EFFCCC81C945F96008764E8 /* PBTestNetworkDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBTestNetworkDAO.m; sourceTree = "<group>"; };
-		9EFFCCCD1C950BC7008764E8 /* User.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.pbobjc.h; sourceTree = "<group>"; };
-		9EFFCCCE1C950BC7008764E8 /* User.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.pbobjc.m; sourceTree = "<group>"; };
-		9EFFCCD01C950FEA008764E8 /* Photo.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Photo.pbobjc.h; sourceTree = "<group>"; };
-		9EFFCCD11C950FEA008764E8 /* Photo.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Photo.pbobjc.m; sourceTree = "<group>"; };
-		A8703F6331B0159074372311 /* Pods-HAccess.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HAccess.release.xcconfig"; path = "Pods/Target Support Files/Pods-HAccess/Pods-HAccess.release.xcconfig"; sourceTree = "<group>"; };
+		A193E4158595155F021CF283 /* libPods-HAccess.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HAccess.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,8 +124,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B233A7CDA81ACF4EA36DFB69 /* libPods.a in Frameworks */,
-				CC2B65C4C3A52CEA191D0E0A /* libPods-HAccess.a in Frameworks */,
+				AB73FA1E1B2DF049FECC1E41 /* libPods-HAccess.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,10 +174,6 @@
 				002D86771B46616300D1D729 /* NetworkDaoTestVC.m */,
 				000C9B261C90326C009D6EE0 /* TestNetworkDAO.h */,
 				000C9B271C90326C009D6EE0 /* TestNetworkDAO.m */,
-				9EF847641C92637900202D0E /* PBNetworkDaoTestVC.h */,
-				9EF847651C92637900202D0E /* PBNetworkDaoTestVC.m */,
-				9EFFCCC71C945F96008764E8 /* PBTestNetworkDAO.h */,
-				9EFFCCC81C945F96008764E8 /* PBTestNetworkDAO.m */,
 			);
 			name = network;
 			sourceTree = "<group>";
@@ -205,7 +181,6 @@
 		002D862C1B462EA300D1D729 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
-				9EF847671C92650300202D0E /* PBEntity */,
 				002438A11C30E108003F3CF9 /* network */,
 				002438A01C30E0F3003F3CF9 /* deserial */,
 				0024389F1C30E0D4003F3CF9 /* dbtest */,
@@ -221,7 +196,6 @@
 			isa = PBXGroup;
 			children = (
 				9E6806211C9BEBB700519539 /* Network */,
-				9E6806291C9BEBB700519539 /* Network+Protobuf */,
 				002D865E1B465BFA00D1D729 /* Database */,
 				002D86631B465BFA00D1D729 /* Entity */,
 			);
@@ -250,6 +224,8 @@
 				002D86651B465BFA00D1D729 /* HEntity.m */,
 				00769C0F1BA866980022878B /* HPropertyMgr.h */,
 				00769C101BA866980022878B /* HPropertyMgr.m */,
+				152761A7221697EF007EE5E2 /* NSObject+HDeserializable.h */,
+				152761A8221697EF007EE5E2 /* NSObject+HDeserializable.m */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -274,8 +250,8 @@
 				002D862C1B462EA300D1D729 /* Demo */,
 				00DD891D1B462D6600214FD3 /* HAccess */,
 				00DD891C1B462D6600214FD3 /* Products */,
-				6AB15CECE928247E4185CCCC /* Pods */,
-				77E818DC0ADCB480589DA6AE /* Frameworks */,
+				C18AB030D5136AF45B6F8EB0 /* Pods */,
+				4D2A90F8734D5929AB2B9B9A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -307,22 +283,10 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		6AB15CECE928247E4185CCCC /* Pods */ = {
+		4D2A90F8734D5929AB2B9B9A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				8B3F5E34E5262575100D707F /* Pods.debug.xcconfig */,
-				63DFD70F3DB6B40DCC91924E /* Pods.release.xcconfig */,
-				2EE6650205A1F6B0AFE04968 /* Pods-HAccess.debug.xcconfig */,
-				A8703F6331B0159074372311 /* Pods-HAccess.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		77E818DC0ADCB480589DA6AE /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				99CAB5AA2A23FAC518F6E98C /* libPods.a */,
-				6603FF90984091327174E3B6 /* libPods-HAccess.a */,
+				A193E4158595155F021CF283 /* libPods-HAccess.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -341,32 +305,10 @@
 				9E6806271C9BEBB700519539 /* HNJsonDeserializer.h */,
 				9E6806281C9BEBB700519539 /* HNJsonDeserializer.m */,
 				00350FE81C9FD61A00CDF06B /* HNetworkProvider.h */,
-				00350FE91C9FDD7E00CDF06B /* HNProvider_AF2.h */,
-				00350FEA1C9FDD7E00CDF06B /* HNProvider_AF2.m */,
+				15FC2EFF1ED2BA91005E8B7B /* HNProvider_AF3.h */,
+				15FC2F001ED2BA91005E8B7B /* HNProvider_AF3.m */,
 			);
 			path = Network;
-			sourceTree = "<group>";
-		};
-		9E6806291C9BEBB700519539 /* Network+Protobuf */ = {
-			isa = PBXGroup;
-			children = (
-				9E68062A1C9BEBB700519539 /* HNPBDeseriralizer.h */,
-				9E68062B1C9BEBB700519539 /* HNPBDeseriralizer.m */,
-			);
-			path = "Network+Protobuf";
-			sourceTree = "<group>";
-		};
-		9EF847671C92650300202D0E /* PBEntity */ = {
-			isa = PBXGroup;
-			children = (
-				9EFFCCD01C950FEA008764E8 /* Photo.pbobjc.h */,
-				9EFFCCD11C950FEA008764E8 /* Photo.pbobjc.m */,
-				9EFFCCCD1C950BC7008764E8 /* User.pbobjc.h */,
-				9EFFCCCE1C950BC7008764E8 /* User.pbobjc.m */,
-				9EF8476E1C92680400202D0E /* Person.pbobjc.h */,
-				9EF8476F1C92680400202D0E /* Person.pbobjc.m */,
-			);
-			path = PBEntity;
 			sourceTree = "<group>";
 		};
 		9EF882261C8814F400238751 /* Mock */ = {
@@ -377,6 +319,15 @@
 			path = Mock;
 			sourceTree = "<group>";
 		};
+		C18AB030D5136AF45B6F8EB0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0413D743DE52FC56EE813F8C /* Pods-HAccess.debug.xcconfig */,
+				0E64B8DBCAB9BDE77B441E0F /* Pods-HAccess.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -384,12 +335,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00DD893E1B462D6600214FD3 /* Build configuration list for PBXNativeTarget "HAccess" */;
 			buildPhases = (
-				C710932FBCB45639246F26F9 /* [CP] Check Pods Manifest.lock */,
+				92E4E7FA8231818972F6277D /* [CP] Check Pods Manifest.lock */,
 				00DD89171B462D6600214FD3 /* Sources */,
 				00DD89181B462D6600214FD3 /* Frameworks */,
 				00DD89191B462D6600214FD3 /* Resources */,
-				1D0782E0E2B469A1C4C0A3E5 /* [CP] Copy Pods Resources */,
-				0D08BA5C7287FA781D90C7FF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -449,49 +398,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0D08BA5C7287FA781D90C7FF /* [CP] Embed Pods Frameworks */ = {
+		92E4E7FA8231818972F6277D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HAccess/Pods-HAccess-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		1D0782E0E2B469A1C4C0A3E5 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HAccess/Pods-HAccess-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C710932FBCB45639246F26F9 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HAccess-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -503,14 +425,11 @@
 			files = (
 				002D864D1B462EA300D1D729 /* Boss.m in Sources */,
 				002D86571B462EA300D1D729 /* User.m in Sources */,
-				00350FEB1C9FDD7E00CDF06B /* HNProvider_AF2.m in Sources */,
 				9E68062D1C9BEBB700519539 /* HNQueueManager.m in Sources */,
 				002D864E1B462EA300D1D729 /* BossLocalDao.m in Sources */,
-				9EF847701C92680400202D0E /* Person.pbobjc.m in Sources */,
 				002D86561B462EA300D1D729 /* StudentLocalDao.m in Sources */,
 				00A005701CA9149800C1E213 /* HNSystemCacheStrategy.m in Sources */,
 				00E907851BAD11F600E10652 /* DeserializeDemo.m in Sources */,
-				9E68062F1C9BEBB700519539 /* HNPBDeseriralizer.m in Sources */,
 				9E68062E1C9BEBB700519539 /* HNJsonDeserializer.m in Sources */,
 				002D866F1B465BFA00D1D729 /* HEntity.m in Sources */,
 				002D86781B46616300D1D729 /* NetworkDaoTestVC.m in Sources */,
@@ -522,19 +441,17 @@
 				002D865C1B465ABC00D1D729 /* MenuVC.m in Sources */,
 				9E68062C1C9BEBB700519539 /* HNetworkDAO.m in Sources */,
 				00DD89241B462D6600214FD3 /* AppDelegate.m in Sources */,
-				9EFFCCC91C945F96008764E8 /* PBTestNetworkDAO.m in Sources */,
 				00DC44621C9BAD940036282E /* HEntity+Persistence.m in Sources */,
 				002D866D1B465BFA00D1D729 /* HDatabaseDAO.m in Sources */,
-				9EFFCCCF1C950BC7008764E8 /* User.pbobjc.m in Sources */,
 				00769C111BA866980022878B /* HPropertyMgr.m in Sources */,
 				00786CFB1B96D0F4005A8247 /* TestEntity1.m in Sources */,
 				00A005691CA90D6400C1E213 /* HAccess2DBSource.m in Sources */,
 				00A0056F1CA9149800C1E213 /* HNCustomCacheStrategy.m in Sources */,
 				00DD89211B462D6600214FD3 /* main.m in Sources */,
+				15FC2F011ED2BA91005E8B7B /* HNProvider_AF3.m in Sources */,
 				00350FEE1C9FE27300CDF06B /* HNetworkMultiDataObj.m in Sources */,
+				152761A9221697EF007EE5E2 /* NSObject+HDeserializable.m in Sources */,
 				002D86581B462EA300D1D729 /* UserLocalDao.m in Sources */,
-				9EF847661C92637900202D0E /* PBNetworkDaoTestVC.m in Sources */,
-				9EFFCCD21C950FEA008764E8 /* Photo.pbobjc.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -625,10 +542,11 @@
 		};
 		00DD893F1B462D6600214FD3 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2EE6650205A1F6B0AFE04968 /* Pods-HAccess.debug.xcconfig */;
+			baseConfigurationReference = 0413D743DE52FC56EE813F8C /* Pods-HAccess.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ANALYZER_NONNULL = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Demo/objectivec",
@@ -659,10 +577,11 @@
 		};
 		00DD89401B462D6600214FD3 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A8703F6331B0159074372311 /* Pods-HAccess.release.xcconfig */;
+			baseConfigurationReference = 0E64B8DBCAB9BDE77B441E0F /* Pods-HAccess.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ANALYZER_NONNULL = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Demo/objectivec",

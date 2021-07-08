@@ -16,7 +16,6 @@
 
 #import "TestNetworkDAO.h"
 #import "TestEntity1.h"
-#import "PBNetworkDaoTestVC.h"
 
 @interface NetworkDaoTestVC ()
 @property (nonatomic) UIView *textBack;
@@ -44,7 +43,7 @@
                     NSString *orgStr = [[NSString alloc] initWithData:sender.responseData encoding:NSUTF8StringEncoding];
                     NSLog(@"error: %@\n orignal: %@", error, orgStr);
                 }
-                else NSLog(@"resp: %@\n%@", NSStringFromClass([data class]), [data jsonString]);
+                else NSLog(@"resp: %@\n%@", NSStringFromClass([data class]), [data h_jsonString]);
             }];
             
             
@@ -60,7 +59,7 @@
                     NSString *orgStr = [[NSString alloc] initWithData:sender.responseData encoding:NSUTF8StringEncoding];
                     NSLog(@"error: %@\n orignal:%@", error, orgStr);
                 }
-                else NSLog(@"resp: %@\n%@", NSStringFromClass([data class]), [data jsonString]);
+                else NSLog(@"resp: %@\n%@", NSStringFromClass([data class]), [data h_jsonString]);
             }];
         }];
         
@@ -73,7 +72,7 @@
                     NSString *orgStr = [[NSString alloc] initWithData:sender.responseData encoding:NSUTF8StringEncoding];
                     NSLog(@"error: %@\n orignal:%@", error, orgStr);
                 }
-                else NSLog(@"resp: %@\n%@", NSStringFromClass([data class]), [data jsonString]);
+                else NSLog(@"resp: %@\n%@", NSStringFromClass([data class]), [data h_jsonString]);
             }];
         }];
         
@@ -85,7 +84,7 @@
             dao.cacheType = [HNCacheTypeBoth createWtihCacheDuration:60];
             [dao startWithQueueName:nil finish:^(id sender, id data, NSError *error) {
                 if (error) NSLog(@"%@", error);
-                else NSLog(@"%@", [data jsonString]);
+                else NSLog(@"%@", [data h_jsonString]);
             }];
         }];
         
@@ -94,7 +93,7 @@
             DemoNetworkDAO *dao = [DemoNetworkDAO new];
             dao.appkey = @"db5c321697d0fd38ce68988d5a28f97e";
             dao.info = @"joke";
-            dao.cacheType = [HNCacheTypeAlternative createWtihCacheDuration:60 nextRequstInterval:40];
+            dao.cacheType = [HNCacheTypeAlternative createWtihNextRequstInterval:40];
             [dao startWithQueueName:nil finish:^(id sender, id data, NSError *error) {
                 if (error) NSLog(@"%@", error);
                 else
@@ -115,12 +114,12 @@
             HNetworkDAO *dao = [HNetworkDAO new];
             dao.baseURL = @"http://img.hb.aicdn.com/30e26fbd16eafb928a8c4a4943ab7d0557a67d7714295-uhMVq2_fw658";
             dao.isFileDownload = YES;
-            [dao setProgressBlock:^(NSUInteger bytesWritten, long long totalBytesWritten, long long totalBytesExpectedToWrite){
-                NSLog(@"progress %lli, %lli", totalBytesWritten, totalBytesExpectedToWrite);
+            [dao setProgressBlock:^(id sender, double progress){
+                NSLog(@"progress %f", progress);
             }];
             [dao startWithQueueName:nil finish:^(id sender, id data, NSError *error) {
                 if (error) NSLog(@"%@", error);
-                else NSLog(@"get file: %@", [data jsonString]);
+                else NSLog(@"get file: %@", [data h_jsonString]);
             }];
         }];
         
@@ -130,7 +129,7 @@
             dao.isFileDownload = YES;
             [dao startWithQueueName:nil finish:^(id sender, id data, NSError *error) {
                 if (error) NSLog(@"%@", error);
-                else NSLog(@"get file: %@", [data jsonString]);
+                else NSLog(@"get file: %@", [data h_jsonString]);
             }];
         }];
         
@@ -140,14 +139,14 @@
             dao.deserializer = [HNEntityDeserializer deserializerWithClass:[TestEntity2 class]];
             [dao startWithQueueName:nil finish:^(id sender, id data, NSError *error) {
                 if (error) NSLog(@"%@", error);
-                else NSLog(@"resp: %@", [data jsonString]);
+                else NSLog(@"resp: %@", [data h_jsonString]);
             }];
         }];
         
-        [self addMenu:@"pbnetwork test" callback:^(id sender, id data) {
-            @strongify(self)
-            [self.navigationController pushViewController:[PBNetworkDaoTestVC new] animated:YES];
-        }];
+//        [self addMenu:@"pbnetwork test" callback:^(id sender, id data) {
+//            @strongify(self)
+//            [self.navigationController pushViewController:[PBNetworkDaoTestVC new] animated:YES];
+//        }];
         
     }
     return self;
@@ -176,7 +175,7 @@
     if (!_textBack)
     {
         UIView *back = [[UIView alloc] initWithFrame:CGRectMake(0, self.view.height - 60, self.view.width, 60)];
-        back.backgroundColor = [UIColor colorWithHex:0xf5f5f5];
+        back.backgroundColor = [UIColor h_colorWithHex:0xf5f5f5];
         back.autoresizingMask = UIViewAutoresizingFlexibleWidth;
         if (!_textView)
         {
@@ -204,7 +203,7 @@
 
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
         btn.layer.cornerRadius = 5;
-        btn.backgroundColor = [UIColor colorWithHex:0x0066cc];
+        btn.backgroundColor = [UIColor h_colorWithHex:0x0066cc];
         btn.frame = CGRectMake(back.width - 60 - 10, (back.height - 44)/2, 60, 44);
         [btn setTintColor:[UIColor darkGrayColor]];
         [btn setTitle:@"send" forState:UIControlStateNormal];

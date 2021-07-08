@@ -1,22 +1,14 @@
 //
-//  HNetworkProvider.h
+//  HNProvider_AF3.h
 //  HAccess
 //
-//  Created by zhangchutian on 16/3/21.
-//  Copyright © 2016年 zhangchutian. All rights reserved.
+//  Created by zct on 2017/5/22.
+//  Copyright © 2017年 zhangchutian. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-
-typedef void (^HNPSuccessCallback)(id sender, NSURLResponse *response, NSData *data);
-typedef void (^HNPFailCallback)(id sender, NSURLResponse *response, NSError *error);
-typedef void (^HNProgressBlock)(id sender, double progress);
-typedef void (^HNPWillSendCallback)(NSMutableURLRequest *request);
-
-
-#define HNetworkProviderRegKey @"HNetworkProviderRegKey"
-
-@protocol HNetworkProvider <NSObject>
+#import "HNetworkProvider.h"
+@interface HNProvider_AF3 : NSObject <HNetworkProvider>
 @property (nonatomic) NSString *urlString;
 @property (nonatomic) id params;
 @property (nonatomic) NSString *method;
@@ -32,6 +24,4 @@ typedef void (^HNPWillSendCallback)(NSMutableURLRequest *request);
 @property (nonatomic, strong) HNPFailCallback failCallback;
 @property (nonatomic, strong) HNProgressBlock progressCallback;
 @property (nonatomic, strong) HNPWillSendCallback willSendCallback;
-- (NSOperation *)sendRequest;
-- (void)cancel;
 @end

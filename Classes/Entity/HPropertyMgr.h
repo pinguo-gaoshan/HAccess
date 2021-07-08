@@ -23,16 +23,12 @@
 //singleton
 + (instancetype)shared;
 
-
-//default is NO, in strict modle, the example progress is very strict
-@property (nonatomic, assign) BOOL strictModle;
-
 //get the cached property list
 - (NSArray *)entityPropertylist:(NSString *)entityClassName;
 
 //deepSearch: should search iteratively by inherit relation
-- (NSArray *)entityPropertylist:(NSString *)entityClassName isDepSearch:(BOOL)deepSearch;
-- (NSArray<HPropertyDetail *> *)entityPropertyDetailList:(NSString *)entityClassName isDepSearch:(BOOL)deepSearch;
+- (NSArray *)entityPropertylist:(NSString *)entityClassName deepTo:(Class)deepToClass;
+- (NSArray<HPropertyDetail *> *)entityPropertyDetailList:(NSString *)entityClassName deepTo:(Class)deepToClass;
 
 
 @end

@@ -8,7 +8,7 @@
 
 #import "HPropertyMgr.h"
 #import <objc/runtime.h>
-#import <Hodor/HCommon.h>
+#import <Hodor/NSObject+ext.h>
 #import "HDeserializableObject.h"
 
 @interface HPropertyStructCacheData : NSObject
@@ -42,7 +42,6 @@
     if (self) {
         _propertyStructCache = [[NSMutableDictionary alloc] init];
         _queue = dispatch_queue_create("hpropertymgr.queue", DISPATCH_QUEUE_SERIAL);
-        _strictModle = YES;
     }
     return self;
 }
@@ -50,20 +49,20 @@
 
 - (NSArray *)entityPropertylist:(NSString *)entityClassName
 {
-    return [self entityPropertylist:entityClassName isDepSearch:NO];
+    return [self entityPropertylist:entityClassName deepTo:nil];
 }
-- (NSArray *)entityPropertylist:(NSString *)entityClassName isDepSearch:(BOOL)deepSearch
+- (NSArray *)entityPropertylist:(NSString *)entityClassName deepTo:(Class)deepToClass
 {
     __block NSArray<HPropertyDetail *> *res = nil;
     dispatch_sync(self.queue, ^{
-        res = [self _entityPropertylist:entityClassName isDepSearch:deepSearch];
+        res = [self _entityPropertylist:entityClassName deepTo:deepToClass];
     });
     return res;
 }
-- (NSArray *)_entityPropertylist:(NSString *)entityClassName isDepSearch:(BOOL)deepSearch;
+- (NSArray *)_entityPropertylist:(NSString *)entityClassName deepTo:(Class)deepToClass
 {
     NSString *key = entityClassName;
-    if (deepSearch) key = [entityClassName stringByAppendingString:@"nodeep"];
+    if (deepToClass) key = [entityClassName stringByAppendingFormat:@"_to_%@", NSStringFromClass(deepToClass?:@"self")];
     HPropertyStructCacheData *cacheData = _propertyStructCache[key];
 
     if (!cacheData)
@@ -76,7 +75,7 @@
         NSMutableArray *pplist = [[NSMutableArray alloc] init];
         Class theClass = NSClassFromString(entityClassName);
         if (!theClass) return nil;
-        while (theClass != [HDeserializableObject class]) {
+        while (theClass != deepToClass) {
             unsigned int count, i;
             objc_property_t *properties = class_copyPropertyList(theClass, &count);
             if (count)
@@ -85,6 +84,9 @@
                 {
                     objc_property_t property = properties[i];
                     NSString *key = [[NSString alloc] initWithCString:property_getName(property) encoding:NSUTF8StringEncoding];
+                    const char* attr = property_getAttributes(property);
+                    char *vName = strstr(attr, "V_"); //property in category will not be contained
+                    if (vName == NULL) continue;                    
                     if ([key isEqualToString:@"hash"]) continue;
                     else if ([key isEqualToString:@"superclass"]) continue;
                     else if ([key isEqualToString:@"description"]) continue;
@@ -95,7 +97,7 @@
                 }
             }
             free(properties);
-            if (!deepSearch) break;
+            if (deepToClass == nil) break;
             theClass = class_getSuperclass(theClass);
         }
         cacheData.pplist = pplist;
@@ -103,18 +105,18 @@
     return cacheData.pplist;
 }
 
-- (NSArray<HPropertyDetail *> *)entityPropertyDetailList:(NSString *)entityClassName isDepSearch:(BOOL)deepSearch
+- (NSArray<HPropertyDetail *> *)entityPropertyDetailList:(NSString *)entityClassName deepTo:(Class)deepToClass
 {
     __block NSArray<HPropertyDetail *> *res = nil;
     dispatch_sync(self.queue, ^{
-        res = [self _entityPropertyDetailList:entityClassName isDepSearch:deepSearch];
+        res = [self _entityPropertyDetailList:entityClassName deepTo:deepToClass];
     });
     return res;
 }
-- (NSArray<HPropertyDetail *> *)_entityPropertyDetailList:(NSString *)entityClassName isDepSearch:(BOOL)deepSearch
+- (NSArray<HPropertyDetail *> *)_entityPropertyDetailList:(NSString *)entityClassName deepTo:(Class)deepToClass
 {
     NSString *key = entityClassName;
-    if (deepSearch) key = [entityClassName stringByAppendingString:@"nodeep"];
+    if (deepToClass) key = [entityClassName stringByAppendingFormat:@"_to_%@", NSStringFromClass(deepToClass?:@"self")];
     HPropertyStructCacheData *cacheData = _propertyStructCache[key];
     if (!cacheData)
     {
@@ -126,7 +128,7 @@
         NSMutableArray *detailList = [NSMutableArray new];
         Class theClass = NSClassFromString(entityClassName);
         if (!theClass) return nil;
-        NSArray *pplist = [self _entityPropertylist:entityClassName isDepSearch:deepSearch];
+        NSArray *pplist = [self _entityPropertylist:entityClassName deepTo:deepToClass];
         for (NSString *p in pplist)
         {
             //get properties
